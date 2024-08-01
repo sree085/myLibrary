@@ -8,9 +8,9 @@
     "start": "node app.js"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16"
   },
-  "author": "Aaliya Azees",
+  "author": "Sreedev",
   "license": "ISC",
   "description": "",
   "dependencies": {
