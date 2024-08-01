@@ -7,10 +7,12 @@ const Viewbooks = () => {
   return (
     <div className='mainContainer'>
     <Box sx={{ padding: 4, align:'center',maxWidth: '1200px',  backgroundColor: '#F9F9F9', borderRadius: 2, boxShadow: 3 }} >
-      {/* <br /><br /> */}
       <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ marginBottom: 4 }}>
         Admin Dashboard
       </Typography>
+      <div style={{marginLeft:410}}>
+      <img src="https://logodix.com/logo/1707130.png" alt="" />
+      </div><br />
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} sm={6}>
         <Link to={'/manage-users'}>
