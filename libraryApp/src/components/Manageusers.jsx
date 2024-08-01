@@ -51,25 +51,25 @@ const ManageUsers = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>User ID</TableCell>
-              <TableCell>Username</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Actions</TableCell>
+              {/* <TableCell>User ID</TableCell> */}
+              <TableCell><b><u>USERNAME</u></b></TableCell>
+              <TableCell><b><u>EMAIL ID</u></b></TableCell>
+              <TableCell><b><u>ACTIONS</u></b></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {users.map(user => (
               <TableRow key={user.id}>
-                <TableCell>{user.id}</TableCell>
+                {/* <TableCell>{user.id}</TableCell> */}
                 <TableCell>{user.Username}</TableCell>
                 <TableCell>{user.EmailId}</TableCell>
                 <TableCell>
                   <IconButton color="error" onClick={() => handleDeleteUser(user._id)}>
                     <DeleteIcon />
                   </IconButton>
-                  <IconButton color="secondary" onClick={() => handleBlockUser(user.id)}>
+                  {/* <IconButton color="secondary" onClick={() => handleBlockUser(user.id)}>
                     <BlockIcon />
-                  </IconButton>
+                  </IconButton> */}
                 </TableCell>
               </TableRow>
             ))}

@@ -40,7 +40,7 @@ const BookDetail = () => {
 
       <Grid container spacing={105} >
       <Grid item xs={3}>
-      <Card sx={{ width: 800, height:500}}>
+      <Card sx={{ width: 800, height:500,paddingLeft:3,paddingTop:3,paddingRight:5}}>
       <CardContent className='cardCont'>
         <Typography gutterBottom variant="h5" component="div">
         <b>Name :</b> 
