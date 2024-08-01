@@ -100,15 +100,15 @@ const Home = () => {
                     )}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Author: {row.author}
+                    <b>Author:</b> {row.author}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Genre: {row.genre}
+                  <b>Genre:</b> {row.genre}
                   </Typography>
                 </CardContent>
                 <div className="card-actions">
                 <Link to={`/book/${row.id}`}>
-                  <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleReadMoreClick(index)}>
+                  <button type="button" className="btn btn-secondary " onClick={() => handleReadMoreClick(index)}>
                     Details
                   </button>
                   </Link>

@@ -133,7 +133,7 @@ const Home = () => {
                   >
                     Details
                   </Button></Link>
-                  <Button
+                  <Button className='btnr'
                     variant='contained'
                     key={row._id}
                     onClick={() => handleRentClick(row._id)}

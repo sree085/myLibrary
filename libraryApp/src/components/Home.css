@@ -3,7 +3,7 @@
 .home-container {
     overflow: hidden;
     background-color: rgb(247, 200, 166);
-    background-image: url('https://img.freepik.com/premium-photo/blur-library-background_882595-4867.jpg');
+    background-image: url('https://images.unsplash.com/photo-1615714145484-42c19e8420f2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTh8aUJrMGJNQm0xckV8fGVufDB8fHx8fA%3D%3D');
     background-size: 100%;
     width: 100%;
 }
@@ -65,7 +65,10 @@
 .card:hover {
     box-shadow: 0 16px 22px rgba(0,0,0,0.2);
     width: 280px; 
-    height: 460px; 
+    height: 480px; 
+    border-width: 10px;
+    border-color:aqua;
+    border-style: groove;
   }
 
 
