@@ -22,7 +22,7 @@ function App() {
   const [count, setCount] = useState(0)
   const location = useLocation();
   const isUserRoute = ['/users', '/edituser'].some(path => location.pathname.startsWith(path));
-  const isAdminRoute = ['/admin', '/addbook'].some(path => location.pathname.startsWith(path));
+  const isAdminRoute = ['/admin', '/addbook','/manage-users','/manage-books'].some(path => location.pathname.startsWith(path));
   const userId = location.pathname.startsWith('/users/') ? location.pathname.split('/')[2] : null
 
   return (

@@ -34,7 +34,7 @@ const Usernav = () => {
           DIGITAL LIBRARY
         </Typography>
         <div>
-        <Link to={'/'}><Button
+        <Link to={'/admin'}><Button
           sx={{
             // backgroundColor: 'rgba(255, 69, 0, 0.8)', 
             color: 'white',

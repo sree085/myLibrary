@@ -13,19 +13,25 @@ const Viewbooks = () => {
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} sm={6}>
-          <Button component={Link} to="/manage-users" variant="contained" color="primary" fullWidth sx={{ padding: 2 }}>
+        <Link to={'/manage-users'}>
+          <Button  variant="contained" color="primary" fullWidth sx={{ padding: 2 }}>
             Manage Users
           </Button>
+          </Link>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Button component={Link} to="/manage-books" variant="contained" color="primary" fullWidth sx={{ padding: 2 }}>
+        <Link to={'/manage-books'}>
+          <Button  variant="contained" color="primary" fullWidth sx={{ padding: 2 }}>
             Books Collections
           </Button>
+          </Link>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Button component={Link} to="/addbook" variant="contained" style={{backgroundColor:'green'}} fullWidth sx={{ padding: 2 }}>
+        <Link to={'/addbook'}>
+          <Button  variant="contained" style={{backgroundColor:'green'}} fullWidth sx={{ padding: 2 }}>
             Add New Book
           </Button>
+          </Link>
         </Grid>
       </Grid>
     </Box>
