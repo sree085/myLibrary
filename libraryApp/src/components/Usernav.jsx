@@ -17,7 +17,7 @@ const Usernav = ({ userId }) => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/user/:id')
+    axios.get('https://projectlibrary-jumw.onrender.com/user/:id')
       .then((res) => {
         setUser(res.data); // Set the single book object
       })

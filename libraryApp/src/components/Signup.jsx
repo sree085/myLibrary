@@ -53,7 +53,7 @@ const Signup = () => {
     //POST
     function valueAdd() {
         if (validatePasswords()) {
-            axios.post('http://localhost:3000/adduser', form)
+            axios.post('https://projectlibrary-jumw.onrender.com/adduser', form)
                 .then((res) => {
                     alert('Data added');
                 })

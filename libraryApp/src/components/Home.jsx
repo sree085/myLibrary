@@ -20,7 +20,7 @@ const Home = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/user')
+    axios.get('https://projectlibrary-jumw.onrender.com/user')
       .then((res) => {
         setUser(res.data); // Set the single book object
       })
@@ -31,7 +31,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/book').then((res) => {
+    axios.get('https://projectlibrary-jumw.onrender.com/book').then((res) => {
       setRows(res.data);
     });
   }, []);

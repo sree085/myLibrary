@@ -22,7 +22,7 @@ const Addbook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/addbook', newBook);
+      await axios.post('https://projectlibrary-jumw.onrender.com/addbook', newBook);
       alert('Book added successfully');
       setNewBook({
         id: '',

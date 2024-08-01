@@ -25,7 +25,7 @@ const Home = () => {
   // }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/book').then((res) => {
+    axios.get('https://projectlibrary-jumw.onrender.com/book').then((res) => {
       setRows(res.data);
     });
   }, []);
@@ -33,7 +33,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserData = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/user');
+            const response = await axios.get('https://projectlibrary-jumw.onrender.com/user');
             setUserData(response.data);
         } catch (error) {
             if (error.response && error.response.status === 401) {
@@ -60,7 +60,7 @@ const Home = () => {
   const handleRentClick = async (_id) => {
     setIsDisabled((prevState) => ({ ...prevState, [_id]: true })); // Disable the button for the clicked book
     try {
-      await axios.put(`http://localhost:3000/bookedit/${_id}`, { status: "Rented" });
+      await axios.put(`https://projectlibrary-jumw.onrender.com/bookedit/${_id}`, { status: "Rented" });
       console.log('Book rented successfully!');
       notifyAdmin(_id); // Notify the admin with the correct _id
     } catch (error) {
@@ -73,8 +73,8 @@ const Home = () => {
   const notifyAdmin = async (userId, bookId) => {
     try {
         // Fetch user and book details from the database
-        const userResponse = await axios.get(`http://localhost:3000/user/${userId}`);
-        const bookResponse = await axios.get(`http://localhost:3000/book/${bookId}`);
+        const userResponse = await axios.get(`https://projectlibrary-jumw.onrender.com/user/${userId}`);
+        const bookResponse = await axios.get(`https://projectlibrary-jumw.onrender.com/book/${bookId}`);
         const user = userResponse.data;
         const book = bookResponse.data;
 
@@ -82,7 +82,7 @@ const Home = () => {
         const message = `User ${user.name} (ID: ${user.id}) has rented the book "${book.title}" (ID: ${book.id}).`;
 
         // Log the notification to the database (assuming you have a notifications endpoint)
-        await axios.post('http://localhost:3000/notifications', {
+        await axios.post('https://projectlibrary-jumw.onrender.com/notifications', {
             userId: user.id,
             bookId: book.id,
             message,

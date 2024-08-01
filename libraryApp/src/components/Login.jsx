@@ -13,7 +13,7 @@ const Login = ({ setIsLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/login', { email, password });
+      const response = await axios.post('https://projectlibrary-jumw.onrender.com/login', { email, password });
       const { userType } = response.data;
       
       localStorage.setItem('userType', userType);
@@ -22,7 +22,7 @@ const Login = ({ setIsLoggedIn }) => {
       if (userType === 'admin') {
         navigate('/admin', { replace: true });
       } else if (userType === 'User') {
-        axios.get('http://localhost:3000/user').then((res) => {
+        axios.get('https://projectlibrary-jumw.onrender.com/user').then((res) => {
       const uone = res.data.find(row=>row.EmailId == email)
         navigate('/users/'+uone._id, { replace: true });
       })
@@ -41,7 +41,7 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
 
-  // const user = await axios.get('http://localhost:3000/pickuser', { email });
+  // const user = await axios.get('https://projectlibrary-jumw.onrender.com/pickuser', { email });
   // console.log(user.data);
 
 
