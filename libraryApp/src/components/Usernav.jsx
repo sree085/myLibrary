@@ -16,16 +16,16 @@ const Usernav = ({ userId }) => {
   const id = userId || params.id;
 
 
-  useEffect(() => {
-    axios.get('https://projectlibrary-jumw.onrender.com/user/:id')
-      .then((res) => {
-        setUser(res.data); // Set the single book object
-      })
-      .catch((err) => {
-        console.error('Error fetching book data:', err);
-        setError('Error fetching book data'); // Set error state
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('https://projectlibrary-jumw.onrender.com/user/:id')
+  //     .then((res) => {
+  //       setUser(res.data); // Set the single book object
+  //     })
+  //     .catch((err) => {
+  //       console.error('Error fetching book data:', err);
+  //       setError('Error fetching book data'); // Set error state
+  //     });
+  // }, []);
 
 
   return (
@@ -78,7 +78,7 @@ const Usernav = ({ userId }) => {
         >
           Logout
         </Button></Link>
-        <Link to={'/edituser/'+id}><AccountCircleIcon sx={{ fontSize: 40 }}></AccountCircleIcon></Link>
+        <Link to={'/edituser/'+id}><AccountCircleIcon sx={{ color:'white', fontSize: 50 }}></AccountCircleIcon></Link>
         </div>
       </Toolbar>
     </AppBar>

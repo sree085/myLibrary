@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../api/axiosConfig';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -17,13 +17,25 @@ const Home = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
   const location=useLocation()
+  const [usr,setUsr] = useState([]);
 
-  console.log(location);
+  const params=useParams();
+  const id = params.id;
+  console.log(id);
+  
+  var uname=null;
+  // console.log(location.state);
+  
+  useEffect(() => {
+    axios.get('https://projectlibrary-jumw.onrender.com/user').then((res) => {
+      setUsr(res.data.find(row=>row._id == id))
+      // const uone =
+      // uname = uone.Name;
+    })
+  }, []);
 
-  // useEffect(() => {
-  //     // const { name } = uone.Name;
-  // }, []);
-
+  console.log(id);
+  
   useEffect(() => {
     axios.get('https://projectlibrary-jumw.onrender.com/book').then((res) => {
       setRows(res.data);
@@ -106,7 +118,7 @@ const Home = () => {
     <div className='home-container'>
       <Box sx={{ flexGrow: 1, margin: '5%' }}>
         <br />
-        <h1 style={{fontFamily:'cursive', color:'antiquewhite', textAlign:'center', fontStyle:'italic'}}>Welcome, USER !</h1>
+        <h1 style={{fontFamily:'cursive', color:'antiquewhite', textAlign:'center', fontStyle:'italic'}}>Welcome, {usr.Name} !</h1>
         <Grid container spacing={3} className="card-container">
           {rows.map((row, index) => (
             <Grid item xs={3} key={index}>
@@ -137,7 +149,7 @@ const Home = () => {
                     variant='contained'
                     key={row._id}
                     onClick={() => handleRentClick(row._id)}
-          disabled={isDisabled[row._id]}
+                    disabled={isDisabled[row._id]}
                   >
                     Rent
                   </Button>

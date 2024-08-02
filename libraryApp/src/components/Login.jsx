@@ -24,7 +24,7 @@ const Login = ({ setIsLoggedIn }) => {
       } else if (userType === 'User') {
         axios.get('https://projectlibrary-jumw.onrender.com/user').then((res) => {
       const uone = res.data.find(row=>row.EmailId == email)
-        navigate('/users/'+uone._id, { replace: true });
+        navigate('/users/'+uone._id,{state:{uone}} ,{ replace: true });
       })
       }
       else{

@@ -59,7 +59,7 @@ button:focus-visible {
     color: #213547;
     /* background-color: #f4b491; */
     background-size: cover; /* or 'contain' */
-    background-image: url('https://img.freepik.com/premium-photo/blur-library-background_882595-4867.jpg');
+    /* background-image: url('https://img.freepik.com/premium-photo/blur-library-background_882595-4867.jpg'); */
   background-position: center;
   background-repeat: no-repeat;
   width: 100vw;

@@ -3,10 +3,13 @@ import axios from 'axios';
 import { IconButton, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import './Managebooks.css';
-
+import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 
 const ManageBooks = () => {
   const [books, setBooks] = useState([]);
+  var navigate= useNavigate()
 
   useEffect(() => {
     fetchBooks();
@@ -29,6 +32,10 @@ const ManageBooks = () => {
       console.error('Error deleting book:', error);
     }
   };
+
+  function valueupdate(val) {
+    navigate('/addbook',{state:{val}})   //state:{val} is the props
+  }
 
   return (
     <div className='managebContainer'>
@@ -56,6 +63,9 @@ const ManageBooks = () => {
                 <TableCell>
                   <IconButton color="error" onClick={() => handleDeleteBook(book._id)}>
                     <DeleteIcon />
+                  </IconButton>
+                  <IconButton color="info" onClick={() => valueupdate(book)}>
+                    <EditIcon />
                   </IconButton>
                 </TableCell>
               </TableRow>

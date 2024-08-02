@@ -36,41 +36,48 @@ const BookDetail = () => {
 
   return (
     <div className='pageContainer'>
-    <div className='mainDiv'>
+    {/* <div className='mainDiv'> */}
 
       <Grid container spacing={105} >
       <Grid item xs={3}>
-      <Card sx={{ width: 800, height:500,paddingLeft:3,paddingTop:3,paddingRight:5}}>
-      <CardContent className='cardCont'>
-        <Typography gutterBottom variant="h5" component="div">
-        <b>Name :</b> 
-        {book.title}
-        </Typography>
-        <Typography variant="h6" component="div">
-            <b>Author  :</b> {book.author}
-          </Typography>
-          <Typography variant="h6" component="div">
-            <b>Year  : </b>{book.year}
-          </Typography>
-          <Typography variant="h6" component="div">
-           <b> Genre  : </b>{book.genre}
-          </Typography>
-          <Typography variant="h6" component="div">
-          <b> Description  : </b><i>{book.Description}</i>
-          </Typography>
-          <Typography variant="h6" component="div">
-           <b> ISBN Number  : </b>{book.ISBN}
-          </Typography>
-      </CardContent>
-      {/* <CardActions>
-        <Button size="small">Share</Button>
-        <Button href='https://www.imdb.com/title/tt25400540/' size="small">Learn More</Button>
-      </CardActions> */}
-    </Card>
+      <Card sx={{ 
+  width: 800, 
+  border: 16, 
+  borderStyle: 'groove', 
+  borderColor: 'coral', 
+  marginTop: 5, 
+  height: 500, 
+  paddingLeft: 3, 
+  paddingTop: 2, 
+  paddingRight: 5 
+}}>
+  <CardContent className='cardCont' sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+    <Typography gutterBottom variant="h5" component="div">
+      <b>Name :</b> {book.title}
+    </Typography>
+    <Typography variant="h6" component="div">
+      <b>Author :</b> {book.author}
+    </Typography>
+    <Typography variant="h6" component="div">
+      <b>Year :</b> {book.year}
+    </Typography>
+    <Typography variant="h6" component="div">
+      <b>Genre :</b> {book.genre}
+    </Typography>
+    <Typography variant="h6" component="div" align="justify">
+      <b>Description :</b> <i>{book.Description}</i>
+    </Typography>
+    <Typography variant="h6" component="div">
+      <b>ISBN Number :</b> {book.ISBN}
+    </Typography>
+  </CardContent>
+</Card>
+
+
         </Grid>
 
     <Grid item xs={2}>
-      <Card sx={{ width: 400 }}>
+      <Card className='imgCard' sx={{ width: 440,height:582,border:16,borderStyle:'groove',borderColor:'coral' }}>
             <CardMedia
               sx={{ height: 550, objectFit: 'contain', alignContent:'center' }}
               image={book.img}
@@ -80,7 +87,7 @@ const BookDetail = () => {
     </Grid>
     
 
-    </div>
+    {/* </div> */}
     </div>
   );
 };
