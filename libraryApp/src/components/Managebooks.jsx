@@ -17,7 +17,7 @@ const ManageBooks = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('https://projectlibrary-jumw.onrender.com/book');
+      const response = await axios.get('https://mylibrary-iabe.onrender.com/book');
       setBooks(response.data);
     } catch (error) {
       console.error('Error fetching books:', error);
@@ -26,7 +26,7 @@ const ManageBooks = () => {
 
   const handleDeleteBook = async (id) => {
     try {
-      await axios.delete(`https://projectlibrary-jumw.onrender.com/removebook/${id}`);
+      await axios.delete(`https://mylibrary-iabe.onrender.com/removebook/${id}`);
       setBooks(books.filter(book => book.id !== id));
     } catch (error) {
       console.error('Error deleting book:', error);

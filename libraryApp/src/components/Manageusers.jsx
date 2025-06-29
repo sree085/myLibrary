@@ -15,7 +15,7 @@ const ManageUsers = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('https://projectlibrary-jumw.onrender.com/user');
+      const response = await axios.get('https://mylibrary-iabe.onrender.com/user');
       const nonAdminUsers = response.data.filter(user => user.Role.toLowerCase() !== 'admin');
       setUsers(nonAdminUsers);
     } catch (error) {
@@ -25,7 +25,7 @@ const ManageUsers = () => {
 
   const handleDeleteUser = async (id) => {
     try {
-      await axios.delete(`https://projectlibrary-jumw.onrender.com/removeuser/${id}`);
+      await axios.delete(`https://mylibrary-iabe.onrender.com/removeuser/${id}`);
       setUsers(users.filter(user => user.id !== id));
     } catch (error) {
       console.error('Error deleting user:', error);
@@ -34,7 +34,7 @@ const ManageUsers = () => {
 
   const handleBlockUser = async (id) => {
     try {
-      await axios.put(`https://projectlibrary-jumw.onrender.com/user/${id}`, { status: 'blocked' });
+      await axios.put(`https://mylibrary-iabe.onrender.com/user/${id}`, { status: 'blocked' });
       setUsers(users.map(user => user.id === id ? { ...user, status: 'blocked' } : user));
     } catch (error) {
       console.error('Error blocking user:', error);

@@ -28,14 +28,14 @@ const Addbook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(location.state!=null){
-      axios.put('https://projectlibrary-jumw.onrender.com/bookedit/'+location.state.val._id,book).then((res)=>{
+      axios.put('https://mylibrary-iabe.onrender.com/bookedit/'+location.state.val._id,book).then((res)=>{
         alert('Data updated!');
       }).catch((error)=>{
         console.log(error);
       })
     }else{
       try {
-        await axios.post('https://projectlibrary-jumw.onrender.com/addbook', book);
+        await axios.post('https://mylibrary-iabe.onrender.com/addbook', book);
         alert('Book added successfully');
         setbook({
           id: '',

@@ -14,7 +14,7 @@ const BookDetail = () => {
   const [error, setError] = useState(null); // State for handling errors
 
   useEffect(() => {
-    axios.get('https://projectlibrary-jumw.onrender.com/book/'+id)
+    axios.get('https://mylibrary-iabe.onrender.com/book/'+id)
       .then((res) => {
         const bookData = res.data.find(row=>row.id == parseInt(id));
         setBook(bookData);

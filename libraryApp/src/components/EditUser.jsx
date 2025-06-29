@@ -33,7 +33,7 @@ const EditUser = () => {
   }
   
   function update(){
-    axios.put('https://projectlibrary-jumw.onrender.com/useredit/'+id,form).then((res)=>{
+    axios.put('https://mylibrary-iabe.onrender.com/useredit/'+id,form).then((res)=>{
       alert('Data updated!');
     }).catch((error)=>{
       console.log(error);
@@ -42,7 +42,7 @@ const EditUser = () => {
   
   useEffect(()=>{
     
-    axios.get('https://projectlibrary-jumw.onrender.com/user').then((res) => {
+    axios.get('https://mylibrary-iabe.onrender.com/user').then((res) => {
       const uone = res.data.find(row=>row._id == id);
       console.log(uone);
       // setId(uone._id);
