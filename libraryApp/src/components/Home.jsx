@@ -107,11 +107,12 @@ const Home = () => {
                   </Typography>
                 </CardContent>
                 <div className="card-actions">
-                <Link to={`/book/${row.id}`}>
+                <Link to={`/book/${row._id}`}>
                   <button type="button" className="btn btn-secondary " onClick={() => handleReadMoreClick(index)}>
                     Details
                   </button>
                   </Link>
+                  console.log(row._id);
                 </div>
               </Card>
             </Grid>
